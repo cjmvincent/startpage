@@ -3,7 +3,7 @@
   src: local("Hack Regular"), url("ttf/Hack-Regular.ttf");
 }
 
-:root {
+/* :root {
   --bg: #1a1b26;
   --fg: #c0caf5;
   --black: #15161e;
@@ -13,6 +13,20 @@
   --blue: #7aa2f7;
   --purple: #bb9af7;
   --cyan: #7dcfff;
+  --light-gray: #a9b1d6;
+  --gray: #414868;
+} */
+
+:root {
+  --bg: #0f111b;
+  --fg: #ecf0c1;
+  --black: #686f9a;
+  --red: #e33400;
+  --green: #5ccc96;
+  --yellow: #f2ce00;
+  --blue: #00a3cc;
+  --purple: #b3a1e6;
+  --cyan: #7a5ccc;
   --light-gray: #a9b1d6;
   --gray: #414868;
 }
