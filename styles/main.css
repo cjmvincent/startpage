@@ -3,6 +3,7 @@
   src: local("Hack Regular"), url("ttf/Hack-Regular.ttf");
 }
 
+/* OG color palette */
 /* :root {
   --bg: #1a1b26;
   --fg: #c0caf5;
@@ -17,7 +18,8 @@
   --gray: #414868;
 } */
 
-:root {
+/* first attempt at SpaceDuck color palette */
+/* :root {
   --bg: #0f111b;
   --fg: #ecf0c1;
   --black: #686f9a;
@@ -28,6 +30,20 @@
   --purple: #b3a1e6;
   --cyan: #7a5ccc;
   --light-gray: #f0f1ce;
+  --gray: #414868;
+} */
+
+:root {
+  --bg: #37426a;
+  --fg: #c6cbbb;
+  --black: #151e34;
+  --red: #c44825;
+  --green: #5cb39b;
+  --yellow: #cab42e;
+  --blue: #0096bb;
+  --purple: #776ac2;
+  --cyan: #677399;
+  --light-gray: #c7cdbd;
   --gray: #414868;
 }
 
