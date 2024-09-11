@@ -84,7 +84,7 @@ body {
   box-sizing: border-box;
   background-color: rgba(21, 22, 30, 0.9);
   border: 1px hidden var(--fg);
-  border-radius: 15px;
+  border-radius: 0 0 15px 15px;
   text-align: left;
   overflow: auto;
 }
