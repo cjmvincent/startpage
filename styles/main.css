@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Hack";
-  src: local("Hack Regular"), url("ttf/Hack-Regular.ttf");
+  src: local("Space Mono"), url("ttf/SpaceMonoNerdFont-Regular.ttf");
 }
 
 :root {
