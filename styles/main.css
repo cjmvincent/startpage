@@ -3,21 +3,6 @@
   src: local("Hack Regular"), url("ttf/Hack-Regular.ttf");
 }
 
-/* OG color palette */
-/* :root {
-  --bg: #1a1b26;
-  --fg: #c0caf5;
-  --black: #15161e;
-  --red: #f7768e;
-  --green: #9ece6a;
-  --yellow: #e0af68;
-  --blue: #7aa2f7;
-  --purple: #bb9af7;
-  --cyan: #7dcfff;
-  --light-gray: #a9b1d6;
-  --gray: #414868;
-} */
-
 :root {
   --bg: #37426a;
   --fg: #c6cbbb;
@@ -69,24 +54,20 @@ body {
   padding: 0;
 }
 
-.shortcuts:first-child {
-  font-weight: 900;
-}
-
 .shortcut {
   text-decoration: none;
   color: var(--fg);
 }
 
 .shortcut:hover {
-  font-weight: bolder;
+  /*font-weight: bolder;*/
   text-decoration: underline;
 }
 
 .pad-terminal {
-  padding-top: 10vh;
-  padding-left: 25vh;
-  padding-right: 25vh;
+  padding-top: 5vh;
+  padding-left: 15vh;
+  padding-right: 15vh;
   height: 96vh;
 }
 
@@ -97,18 +78,74 @@ body {
 }
 
 #terminal {
-  min-height: 100%;
+  height: 75%;
   /* line-height: 0.5rem; */
-  box-sizing: border-box;
   padding: 1rem;
+  box-sizing: border-box;
   background-color: rgba(21, 22, 30, 0.9);
   border: 1px hidden var(--fg);
   border-radius: 15px;
   text-align: left;
+  overflow: auto;
 }
 
 #terminal p {
   margin: 2px;
+}
+
+.pad-terminal .scrollable .bar {
+  display: flex;
+  min-height: 20px;
+  gap: 5px;
+  justify-content: start;
+  background: #282c34;
+  padding: 5px;
+  border-radius: 15px 15px 0 0;
+}
+
+.pad-terminal .scrollable .bar .title {
+  color: white;
+  /*font-weight: bold;*/
+  flex-grow: 1;
+  text-align: center;
+}
+
+.pad-terminal .scrollable .bar .controls {
+  display: flex;
+  /*position: absolute;*/
+  gap: 5px;
+  cursor: pointer;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.pad-terminal .scrollable .bar .controls .close {
+  background: var(--red);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+  opacity: 100;
+}
+
+.pad-terminal .scrollable .bar .controls .minimize {
+  /*background: yellow;*/
+  background: var(--yellow);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+  opacity: 100;
+}
+
+.pad-terminal .scrollable .bar .controls .maximize {
+  /*background: green;*/
+  background: var(--green);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+  opacity: 100;
 }
 
 .prompt {

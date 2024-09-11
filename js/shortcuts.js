@@ -15,7 +15,7 @@ export default [
     color: "red",
     items: {
       "r/Unixporn": "https://www.reddit.com/r/unixporn/",
-      "r/MechanicalKeyboards": "https://www.reddit.com/r/MechanicalKeyboards/",
+      "r/MechKeyboards": "https://www.reddit.com/r/MechanicalKeyboards/",
       "r/Workspaces": "https://www.reddit.com/r/Workspaces/",
     },
   },
