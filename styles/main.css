@@ -6,13 +6,13 @@
 :root {
   --bg: #37426a;
   --fg: #c6cbbb;
-  --black: #151e34;
-  --red: #c44825;
-  --green: #5cb39b;
-  --yellow: #cab42e;
-  --blue: #0096bb;
-  --purple: #776ac2;
-  --cyan: #677399;
+  --black: #69697e;
+  --red: #e06c75;
+  --green: #6bca78;
+  --yellow: #feff6e;
+  --blue: #61afef;
+  --purple: #9966cc;
+  --cyan: #56b5c2;
   --light-gray: #c7cdbd;
   --gray: #414868;
 }
