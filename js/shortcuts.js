@@ -17,6 +17,7 @@ export default [
       "r/Unixporn": "https://www.reddit.com/r/unixporn/",
       "r/MechKeyboards": "https://www.reddit.com/r/MechanicalKeyboards/",
       "r/Workspaces": "https://www.reddit.com/r/Workspaces/",
+      tldr: "https://tldr.tech/newsletters",
     },
   },
   {
@@ -34,6 +35,7 @@ export default [
     items: {
       YouTube: "https://www.youtube.com/",
       PokemonShowdown: "https://play.pokemonshowdown.com/",
+      ChatGPT: "https://chat.openai.com/",
     },
   },
 ];
