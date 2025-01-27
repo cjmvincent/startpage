@@ -38,4 +38,13 @@ export default [
       ChatGPT: "https://chat.openai.com/",
     },
   },
+  {
+    category: "Misc",
+    color: "purple",
+    items: {
+      YouTube: "https://www.youtube.com/",
+      PokemonShowdown: "https://play.pokemonshowdown.com/",
+      ChatGPT: "https://chat.openai.com/",
+    },
+  },
 ];
