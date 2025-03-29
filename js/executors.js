@@ -84,8 +84,12 @@ export default {
     };
     const date = now.toLocaleDateString(undefined, options);
     const time = now.toLocaleTimeString();
-    render(`<p>📅 <b>${date}</b></p>`);
-    render(`<p>⏰ <b>${time}</b></p>`);
+    render(`
+      <p style="display: flex; gap: 1rem; align-items: center;">
+        <span>📅 <b>${date}</b></span>
+        <span>⏰ <b>${time}</b></span>
+      </p>
+    `);
   },
   neofetch: () => {
     const username = "charles"; // You can make this dynamic later
