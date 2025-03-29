@@ -1,20 +1,6 @@
 import { dateDiffInMinutes, error, getWeather, render } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
 
-const getDateTime = () => {
-  const now = new Date();
-  const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
-  const date = now.toLocaleDateString(undefined, options);
-  const time = now.toLocaleTimeString();
-  return { date, time };
-};
-
-const date = () => {
-  const { date, time } = getDateTime();
-  render(`<p>📅 <b>${date}</b></p>`);
-  render(`<p>⏰ <b>${time}</b></p>`);
-};
-
 export default {
   search: (options) => {
     const query = options.join(" ") || null;
