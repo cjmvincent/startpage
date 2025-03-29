@@ -81,20 +81,25 @@ export default {
     const username = "charles"; // You can make this dynamic later
     const hostname = "baymax";
     const os = navigator.platform;
-    const browser = navigator.userAgent;
+    const browser = (() => {
+      const ua = navigator.userAgent;
+      const match =
+        ua.match(/(Firefox|Edg|Chrome|Safari)\/(\d+)/) || ["", "Unknown", ""];
+      return `${match[1]} ${match[2]}`;
+    })();    
     const uptimeMin = Math.floor(performance.now() / 1000 / 60);
     const background = "monochrome-world.jpg"; // You can fetch this dynamically if you randomize
   
     render(`
-      <pre>
-  <span class="cyan">${username}</span><span class="light-gray">@</span><span class="green">${hostname}</span>
+    <pre>
+    <span class="cyan">${username}</span><span class="light-gray">@</span><span class="green">${hostname}</span>
   ----------------------------
-  <span class="yellow">OS</span>: ${os}
-  <span class="yellow">Browser</span>: ${browser}
-  <span class="yellow">Uptime</span>: ${uptimeMin} mins
-  <span class="yellow">Background</span>: ${background}
-  <span class="yellow">Theme</span>: Synthwave (custom)
-      </pre>
+    <span class="yellow">OS</span>: ${os}
+    <span class="yellow">Browser</span>: ${browser}
+    <span class="yellow">Uptime</span>: ${uptimeMin} mins
+    <span class="yellow">Background</span>: ${background}
+    <span class="yellow">Theme</span>: Synthwave (custom)
+    </pre>
     `, false);
   }  
 };
