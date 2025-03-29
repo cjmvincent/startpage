@@ -66,6 +66,8 @@ body {
 }
 
 .pad-terminal {
+  max-width: 700px;
+  margin: 0 auto;
   padding-top: 5vh;
   padding-left: 15vh;
   padding-right: 15vh;
@@ -79,7 +81,9 @@ body {
 }
 
 #terminal {
-  height: 75%;
+  height: 60%;
+  max-width: 700px;
+  margin: 0 auto;
   /* line-height: 0.5rem; */
   padding: 1rem;
   box-sizing: border-box;
@@ -247,4 +251,49 @@ body {
   font: inherit;
   border: none;
   color: inherit;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pad-terminal {
+    padding: 0;
+    height: 100vh;
+  }
+
+  .scrollable {
+    height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #terminal {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 0;
+    font-size: 1rem;
+  }
+
+  #input {
+    font-size: 1rem;
+  }
+
+  .shortcuts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pad-terminal .scrollable .bar .title {
+    font-size: 1rem;
+  }
 }
