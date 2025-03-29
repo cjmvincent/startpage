@@ -1,63 +1,30 @@
 import { dateDiffInMinutes, error, getWeather, render } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
 
+const getDateTime = () => {
+  const now = new Date();
+  const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+  const date = now.toLocaleDateString(undefined, options);
+  const time = now.toLocaleTimeString();
+  return { date, time };
+};
+
+const date = () => {
+  const { date, time } = getDateTime();
+  render(`<p>📅 <b>${date}</b></p>`);
+  render(`<p>⏰ <b>${time}</b></p>`);
+};
+
 export default {
-  motd: () => {
-    let cachedQuote = localStorage.getItem("cachedQuote");
-    if (cachedQuote) {
-      cachedQuote = JSON.parse(cachedQuote);
-      if (
-        dateDiffInMinutes(parseInt(cachedQuote.fetchedAt), Date.now()) < 720
-      ) {
-        render(`"${cachedQuote.content}" - ${cachedQuote.author}`);
-        return;
-      }
-    }
-    fetch("https://api.quotable.io/random?tags=technology")
-      .then((res) => res.json())
-      .then((data) => {
-        render(`"${data.content}" - ${data.author}`);
-        localStorage.setItem(
-          "cachedQuote",
-          JSON.stringify({
-            content: data.content,
-            author: data.author,
-            fetchedAt: Date.now().toString(),
-          })
-        );
-      });
-  },
-  weather: (options) => {
-    let usage = `
-          <p>Usage: weather [set key &lt;key&gt;] [set loc &lt;city,state,country&gt;]</p>
-          <p>If no options are provided, the current weather forecast will be displayed</p>
-          <p>Options:</p>
-          <p>key : obtain a key from <a class="shortcut" href="https://openweathermap.org">https://openweathermap.org</a></p>
-          <p>loc : comma-separated list of city name, state code (omit if outside the US), and ISO-3166 country code</p>
-           `;
-    if (!options || options.length === 0) {
-      return getWeather();
-    } else if (options[0] === "set") {
-      if (options[1] === "key") {
-        localStorage.setItem("WEATHER_API_KEY", options[2]);
-        render(`Weather API key was set to ${options[2]}`);
-      } else if (options[1] === "loc") {
-        localStorage.setItem("loc", options[2]);
-        render(`Location set to ${options[2]}`);
-      } else render(usage, false);
-    } else {
-      render(usage, false);
-    }
-  },
   search: (options) => {
     const query = options.join(" ") || null;
     if (query) {
-      window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(
+      window.location.href = `https://www.google.com/search?q=${encodeURIComponent(
         query
       )}`;
     } else {
-      render("No query, redirecting to DDG!");
-      window.location.href = "https://duckduckgo.com";
+      render("No query, redirecting to Google!");
+      window.location.href = "https://www.google.com";
     }
   },
   ls: () => {
@@ -91,4 +58,53 @@ export default {
     output.innerHTML = "";
     input.focus();
   },
+  fortune: () => {
+    const fortunes = [
+      "The best way to predict the future is to invent it.",
+      "Unix is user-friendly. It's just selective about who its friends are.",
+      "To err is human, to really foul things up you need a computer.",
+      "There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors.",
+      "Why do Java developers wear glasses? Because they don't see sharp.",
+      "Fortune favors the bold.",
+      "If at first you don't succeed; call it version 1.0.",
+      "In a world without fences and walls, who needs Gates and Windows?",
+      "Programming is like writing a book... except if you miss a single comma on page 126 the whole thing won’t compile.",
+      "Beware of bugs in the above code; I have only proved it correct, not tried it. – Donald Knuth",
+    ];
+    const random = fortunes[Math.floor(Math.random() * fortunes.length)];
+    render(`🍀 <i>${random}</i>`);
+  },
+  date: () => {
+    const now = new Date();
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    const date = now.toLocaleDateString(undefined, options);
+    const time = now.toLocaleTimeString();
+    render(`<p>📅 <b>${date}</b></p>`);
+    render(`<p>⏰ <b>${time}</b></p>`);
+  },
+  neofetch: () => {
+    const username = "charles"; // You can make this dynamic later
+    const hostname = "baymax";
+    const os = navigator.platform;
+    const browser = navigator.userAgent;
+    const uptimeMin = Math.floor(performance.now() / 1000 / 60);
+    const background = "monochrome-world.jpg"; // You can fetch this dynamically if you randomize
+  
+    render(`
+      <pre>
+  <span class="cyan">${username}</span><span class="light-gray">@</span><span class="green">${hostname}</span>
+  ----------------------------
+  <span class="yellow">OS</span>: ${os}
+  <span class="yellow">Browser</span>: ${browser}
+  <span class="yellow">Uptime</span>: ${uptimeMin} mins
+  <span class="yellow">Background</span>: ${background}
+  <span class="yellow">Theme</span>: Synthwave (custom)
+      </pre>
+    `, false);
+  }  
 };

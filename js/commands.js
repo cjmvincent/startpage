@@ -22,13 +22,18 @@ export default [
     execute: executor.clear,
   },
   {
-    name: ["weather"],
-    description: "Displays the weather forecast",
-    execute: executor.weather,
+    name: ["date"],
+    description: "Shows current date, time, and weather",
+    execute: executor.date,
   },
   {
-    name: ["motd"],
-    description: "Displays a random famous quote",
-    execute: executor.motd,
+    name: ["fortune"],
+    description: "Drops a random tech quote or witty one-liner",
+    execute: executor.fortune,
   },
+  {
+    name: ["neofetch"],
+    description: "Displays system info like a Linux fetch script",
+    execute: executor.neofetch,
+  }  
 ];
