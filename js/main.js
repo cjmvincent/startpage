@@ -38,7 +38,7 @@ input.addEventListener("keydown", function (e) {
 
 window.addEventListener("load", () => {
   executors.ls();
-  let filenames = ["real-world.jpg"];
+  let filenames = ["into_the_spider_verse.jpg"];
   let root = document.getElementsByTagName("html")[0];
   root.style.backgroundImage = `url("./backgrounds/${
     filenames[Math.floor(Math.random() * filenames.length)]
